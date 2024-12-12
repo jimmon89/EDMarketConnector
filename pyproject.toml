@@ -1,5 +1,5 @@
 [project]
-requires-python = "== 3.11.9"
+requires-python = ">= 3.11.9"
 version = "5.12.1"
 name = "EDMarketConnector"
 dependencies = [
@@ -28,6 +28,7 @@ classifiers = [
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
 ]
 
 [project.urls]
