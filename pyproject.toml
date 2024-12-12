@@ -1,6 +1,45 @@
+[project]
+requires-python = "== 3.11.9"
+version = "5.12.1"
+name = "EDMarketConnector"
+dependencies = [
+    "requests==2.32.3",
+    "pillow==10.4.0",
+    "watchdog==4.0.1",
+    "semantic-version==2.10.0",
+    "psutil==6.0.0",
+    "pywin32==306; sys_platform == 'win32'",
+    "simplesystray==0.1.0; sys_platform == 'win32'",
+]
+authors = [
+    {name = "Phoebe"},
+    {name = "Felix Linker"},
+    {name = "Guillaume P."},
+    {name = "Richard Buckle"},
+    {name = "Brian Wilson"},
+]
+description = "Downloads commodity market and other station data from the game Elite: Dangerous for use with all popular online and offline trading tools."
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["EDMC", "Elite Dangerous", "EDCD", "EDMarketConnector", "Elite Dangerous Market Connector"]
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
+    "Topic :: Utilities",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+]
+
+[project.urls]
+homepage = "https://github.com/EDCD/EDMarketConnector"
+download = "https://github.com/EDCD/EDMarketConnector/archive/refs/heads/main.zip"
+Repository = "https://github.com/EDCD/EDMarketConnector.git"
+documentation = "https://github.com/EDCD/EDMarketConnector/wiki"
+issues = "https://github.com/EDCD/EDMarketConnector/issues"
+changelog = "https://github.com/EDCD/EDMarketConnector/blob/main/ChangeLog.md"
+
 [tool.autopep8]
 max_line_length = 120
-
 
 [tool.pytest.ini_options]
 testpaths = ["tests"] # Search for tests in tests/
@@ -23,3 +62,11 @@ sys-platform-not-darwin = "sys_platform == 'darwin'"
 sys-platform-linux = "sys_platform != 'linux'"
 sys-platform-not-linux = "sys_platform == 'linux'"
 sys-platform-not-known = "sys_platform in ('darwin', 'linux', 'win32')"
+
+[project.gui-scripts]
+    edmarketconnector = "EDMarketConnector:__main__"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["*"]
+exclude = []
